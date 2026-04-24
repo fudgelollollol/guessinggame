@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Sentence Horrors</title>
+  <link rel="icon" type="image/png" href="favicon.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <img src="favicon.jpg" alt="favicon" class="header-favicon">
+      <span class="header-title">Two Sentence Horrors</span>
+    </div>
+    <div class="header-center">
+      <span class="creator">made for <a href="https://www.tiktok.com/@jarrett_warlick" class="header-link"
+          target="_blank">@Jarrett_Warlick</a></span>
+      <button class="info-btn" id="infoBtn" aria-label="Information">about</button>
+      <a href="/projects" class="info-btn" aria-label="More Games">more games</a>
+      <div class="share-container">
+        <button class="info-btn" id="shareBtn" aria-label="Share">share</button>
+        <div id="copyToast" class="copy-toast">Copied!</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="creator">by <a href="/" target="_blank">fish-eater</a></span>
+      <button class="donate-btn" onclick="window.open('https://buymeacoffee.com/wyattkarnes', '_blank')">Donate</button>
+    </div>
+  </header>
+  <main>
+    <div class="main-layout">
+      <!-- About Panel -->
+      <div class="about-panel" id="aboutPanel">
+        <div class="about-content">
+          <button class="panel-close" id="closePanel">&times;</button>
+          <h3>about this game</h3>
+          <p>try to guess the horror story from the first sentence</p>
+          <p>this site was made for my friend, Jarrett, for his tiktok page</p>
+          <p><strong><a href="https://git.disroot.org/fisheater/2sentenceexplorer">Source Code</a></strong></p>
+          <p>any questions or if you want me to make you something:</p>
+          <p><strong>Contact:</strong> <a href="mailto:wyattekarnes@gmail.com">wyattekarnes@gmail.com</a></p>
+        </div>
+      </div>
+
+      <!-- Content Column -->
+      <div class="content-column">
+        <!-- Game Container -->
+        <div class="game-container">
+          <div class="story" id="story"><span class="loading">loading horror...</span></div>
+          <div class="selectors">
+            <select id="subreddit">
+              <option value="TwoSentenceHorror">r/TwoSentenceHorror</option>
+              <option value="badtwosentencehorrors">r/badtwosentencehorrors</option>
+            </select>
+            <select id="sort">
+              <option value="year">popular (recent)</option>
+              <option value="all">popular (all time)</option>
+              <option value="random">random</option>
+            </select>
+            <button id="reload">more</button>
+          </div>
+        </div>
+
+        <!-- Comments Card -->
+        <div id="commentsOverlay" class="comments-card">
+          <iframe src="/creation/comments?url=2sentenceexplorer" class="comments-iframe" id="commentsIframe"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+  <button id="showCommentsBtn" class="comments-trigger">show comments</button>
+  <script src="script.js"></script>
+</body>
+
+</html>
