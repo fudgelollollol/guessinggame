@@ -1,4 +1,4 @@
-const CORS_PROXY = "https://wyatt.farted.net/fetch?url=";
+const CORS_PROXY = "https://corsproxy.io/?url=";
 
 // if my proxy is down:
 // https://cors.eu.org/
