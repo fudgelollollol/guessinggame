@@ -1,4 +1,4 @@
-const CORS_PROXY = "https://corsproxy.io/?url=";
+const CORS_PROXY = "https://sweet-river-8d92.fudgelollollollol.workers.dev/?url=";
 
 // if my proxy is down:
 // https://cors.eu.org/
