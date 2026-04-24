@@ -19,10 +19,16 @@ const shuffle = arr => {
 async function getStories(sub, sort) {
   const base = `https://www.reddit.com/r/${sub}/`;
   let url = (sort === "all" || sort === "year")
-    ? `${base}top.json?t=${sort}&limit=${POST_LIMIT}`
-    : `${base}new.json?limit=${POST_LIMIT}`;
-  const resp = await fetch(CORS_PROXY + encodeURIComponent(url));
-  if (!resp.ok) throw new Error("Fetch error or CORS fail");
+    ? `${base}top.json?t=${sort}&limit=${POST_LIMIT}&raw_json=1`
+    : `${base}new.json?limit=${POST_LIMIT}&raw_json=1`;
+
+  const resp = await fetch(url, {
+    headers: {
+      "Accept": "application/json"
+    }
+  });
+
+  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
   const data = await resp.json();
   return data.data.children.filter(p =>
     !p.data.stickied && !p.data.over_18 &&
